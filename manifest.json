@@ -1,0 +1,31 @@
+{
+	"name": "Echo mks left/right disabler",
+	"description": "Echo mks left/right disabler",
+	"manifest_version": 2,
+
+	"version": "1.0",
+
+	"permissions": 
+	[
+		"webRequest",
+		"webRequestBlocking",
+		"<all_urls>",
+		"activeTab"
+	],
+
+	"browser_action": 
+	{
+		"default_icon": "icon48.png",
+		"default_title": "Echo mks left/right disabler"
+	},
+
+	"icons": 
+	{
+		"48": "icon48.png"
+	},
+
+	"background": 
+	{
+		"scripts": ["responcefiler.js", "filter_list.js"]
+	}
+}
