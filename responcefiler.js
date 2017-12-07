@@ -5,7 +5,7 @@ class ResponceFiler
 		var decoder = new TextDecoder("utf-8");
 		var encoder = new TextEncoder();
 		
-		var responceString = "";
+		let responceString = "";
 				
 		browser.webRequest.onBeforeRequest.addListener
 		(
@@ -43,6 +43,7 @@ class ResponceFiler
 					});
 
 					filter.write(encoder.encode(responceString));
+					responceString = "";
 					filter.disconnect();
 				}
 				//###############################
