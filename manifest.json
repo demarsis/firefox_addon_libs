@@ -26,6 +26,6 @@
 
 	"background": 
 	{
-		"scripts": ["responcefiler.js", "filter_list.js"]
+		"scripts": ["responcefilter.js", "filter_list.js"]
 	}
 }

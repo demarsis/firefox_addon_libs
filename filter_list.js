@@ -1,4 +1,4 @@
-new ResponceFiler(
+new ResponceFilter(
 	["https://2.cdn.echo.msk.ru/assets/application-*.js"],
 	["script"],
 	[
@@ -13,4 +13,4 @@ new ResponceFiler(
 	]
 );
 
-
+console.log("Filter started!");
