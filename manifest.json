@@ -1,6 +1,6 @@
 {
-	"name": "Echo mks left/right disabler",
-	"description": "Echo mks left/right disabler",
+	"name": "Browser addon (echo msk experiment).",
+	"description": "Browser addon (echo msk experiment).",
 	"manifest_version": 2,
 
 	"version": "1.0",
@@ -16,7 +16,7 @@
 	"browser_action": 
 	{
 		"default_icon": "icon48.png",
-		"default_title": "Echo mks left/right disabler"
+		"default_title": "Browser addon (echo msk experiment)."
 	},
 
 	"icons": 
@@ -26,6 +26,6 @@
 
 	"background": 
 	{
-		"scripts": ["responcefilter.js", "filter_list.js"]
+		"scripts": ["responcefilter.js", "blockfilter.js", "filter_list.js"]
 	}
 }

@@ -1,3 +1,4 @@
+// Redifine behavior for left/right buttons
 new ResponceFilter(
 	["https://2.cdn.echo.msk.ru/assets/application-*.js"],
 	["script"],
@@ -12,5 +13,11 @@ new ResponceFilter(
 		}
 	]
 );
+
+// block all avatars (images)
+new BlockFilter(
+	["https://echo.msk.ru/files/avatar*"],
+	["image"]
+);	
 
 console.log("Filter started!");

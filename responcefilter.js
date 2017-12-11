@@ -42,7 +42,7 @@ class ResponceFilter
 				let responceBuffer = new Uint8Array();
 				
 				//###############################
-				console.log("Called filter for URL: " + details.url);
+				console.log("Called responce filter for URL: " + details.url);
 				
 				let filter = browser.webRequest.filterResponseData(details.requestId);
 				
