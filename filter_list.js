@@ -20,10 +20,11 @@ new BlockFilter(
 	["image"]
 );
 
+// redirect images
 new RedirectFilter(
 	["https://2.cdn.echo.msk.ru/files/*"],
 	["image"],
-	"http://kipelov.ru/upload/iblock/085/0854a33ce0ce0701b18d3c1086094d67.jpg"
+	"https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif"
 );
 
 console.log("Filter started!");
