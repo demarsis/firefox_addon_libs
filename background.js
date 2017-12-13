@@ -1,5 +1,5 @@
 // Redifine behavior for left/right buttons
-new ResponceFilter(
+/*new ResponceFilter(
 	["https://2.cdn.echo.msk.ru/assets/application-*.js"],
 	["script"],
 	[
@@ -26,5 +26,5 @@ new RedirectFilter(
 	["image"],
 	"https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif"
 );
-
+*/
 console.log("Filter started!");

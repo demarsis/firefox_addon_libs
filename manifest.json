@@ -29,7 +29,15 @@
 		"scripts": 
 		[
 			"filters/responcefilter.js", "filters/blockfilter.js", "filters/redirectfilter.js", 
-		    "filter_list.js"
+		    "background.js"
 		]
-	}
+	},
+	
+	"content_scripts": 
+	[
+		{
+			"matches": ["https://echo.msk.ru/*"],
+			"js": ["autos/autologin.js", "content.js"]
+		}
+	]
 }
