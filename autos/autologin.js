@@ -1,9 +1,9 @@
 function fillInInputById(id, text)
 {
-	let input = document.getElementById(id);
-	if (input)
+	let element = document.getElementById(id);
+	if (element)
 	{
-		input.value = text;
+		element.value = text;
 		console.log("Filled in an element: id = " + id + ", text: " + text);
 		return true;
 	}
@@ -38,4 +38,21 @@ function callSubmitById(id)
 		return false;
 	}
 	return false;
+}
+
+function setCheckboxStateById(id, flag)
+{
+	let element = document.getElementById(id);
+	if (element)
+	{
+		element.checked = flag;
+		console.log("Checked an element: id = " + id + ", state: " + flag);
+		return true;
+	}
+	else
+	{
+		console.log("Cannot find an element: id = " + id);
+		return false;
+	}
+	return false;	
 }
