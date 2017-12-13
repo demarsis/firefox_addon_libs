@@ -1,6 +1,6 @@
 {
-	"name": "Browser addon (echo msk experiment).",
-	"description": "Browser addon (echo msk experiment).",
+	"name": "Firefox addon libs.",
+	"description": "Firefox addon libs.",
 	"manifest_version": 2,
 
 	"version": "1.0",
@@ -16,7 +16,7 @@
 	"browser_action": 
 	{
 		"default_icon": "icon48.png",
-		"default_title": "Browser addon (echo msk experiment)."
+		"default_title": "Firefox addon libs."
 	},
 
 	"icons": 
@@ -36,7 +36,7 @@
 	"content_scripts": 
 	[
 		{
-			"matches": ["https://echo.msk.ru/*"],
+			"matches": ["https://www.chess.com/*"],
 			"js": ["autos/autologin.js", "content.js"]
 		}
 	]

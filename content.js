@@ -1,6 +1,7 @@
-if (document.getElementById("login"))
+if (document.getElementById("username"))
 {
-	fillInInputById("login", "my_login");
+	fillInInputById("username", "my_login");
 	fillInInputById("password", "my_pass");
-	callSubmitById("authform");
-}
+	setCheckboxStateById("_remember_me", true);
+	emulateEnterKeyPressById("password");
+}	
