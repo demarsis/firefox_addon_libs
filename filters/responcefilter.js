@@ -16,7 +16,7 @@ function replaceStrings(str, targetAndReplaceStrings, details)
 		
 		if (str.indexOf(target) != -1)
 		{
-			str = str.replace(target, replace);
+			str = str.split(target).join(replace);
 			
 			console.log("Replaced substring:\n" + 
 						"URL: " + details.url + "\n" + 
