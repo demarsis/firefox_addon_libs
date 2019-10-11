@@ -1,11 +1,3 @@
-function concatUint8Arrays(a, b)
-{
-	var c = new Uint8Array(a.length + b.length);
-	c.set(a);
-	c.set(b, a.length);
-	return c;
-}
-
 function replaceStrings(str, targetAndReplaceStrings, details)
 {
 	// replace all strings from target to replace
@@ -29,7 +21,7 @@ function replaceStrings(str, targetAndReplaceStrings, details)
 }
 
 class ResponceFilter
-{
+{	
 	constructor(urls, types, targetAndReplaceStrings)
 	{
 		var decoder = new TextDecoder("utf-8");
@@ -45,26 +37,42 @@ class ResponceFilter
 				console.log("Called responce filter for URL: " + details.url);
 				
 				let filter = browser.webRequest.filterResponseData(details.requestId);
+				let data = [];
 				
 				filter.ondata = event => 
 				{				
-					let dataUint8 = new Uint8Array(event.data);
-					responceBuffer = concatUint8Arrays(responceBuffer, dataUint8);
+					data.push(event.data);
 				}
 				
-				filter.onstop = event => 
+				filter.onstop = event =>
 				{
-					let responceString = decoder.decode(responceBuffer);
-					responceString = replaceStrings(responceString, targetAndReplaceStrings, details);
-
-					filter.write(encoder.encode(responceString));
-					filter.disconnect();				
-				}
+					let str = "";
+					if (data.length == 1)
+					{
+						str = decoder.decode(data[0]);
+					}
+					else
+					{
+						for (let i = 0; i < data.length; i++)
+						{
+							let stream = (i == data.length - 1) ? false : true;
+							str += decoder.decode(data[i], {stream});
+						}
+					}
+					
+					// replacing
+					str = replaceStrings(str, targetAndReplaceStrings, details);
+					
+					filter.write(encoder.encode(str));
+					filter.close();
+				};
 				//###############################
 			},
 			{urls : urls, types : types},
 			["blocking"]
 		);
 	}
+	
+
 };
 

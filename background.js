@@ -1,30 +1,17 @@
-// Redifine behavior for left/right buttons
-/*new ResponceFilter(
-	["https://2.cdn.echo.msk.ru/assets/application-*.js"],
+// Can set rating up/down as a joke (this doesn't vote for real)
+new ResponceFilter(
+	["https://cs.pikabu.ru/apps/desktop/1.32.12/main/app*js"],
 	["script"],
 	[
 		{
-			target  : 'c.find(".toright").on("click",function(e){',
-			replace : 'c.find(".toright").on("click",function(e){alert("Right!");return;'
+			target  : 'this.initParams.userID>0',
+			replace : 'true'
 		},
 		{
-			target  : 'c.find(".toleft").on("click",function(e){',
-			replace : 'c.find(".toleft").on("click",function(e){alert("Left!");return;'
+			target  : 't=this.vote+t.valueOf(),',
+			replace : 't=this.vote+t.valueOf(),alert(t),'			
 		}
 	]
 );
 
-// block all avatars (images)
-new BlockFilter(
-	["https://echo.msk.ru/files/avatar*"],
-	["image"]
-);
-
-// redirect images
-new RedirectFilter(
-	["https://2.cdn.echo.msk.ru/files/*"],
-	["image"],
-	"https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif"
-);
-*/
 console.log("Filter started!");
